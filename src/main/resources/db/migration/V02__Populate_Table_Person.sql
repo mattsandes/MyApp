@@ -1,0 +1,10 @@
+insert into tb_person (id, name, gender, address) values (1, 'Nert', 'Female', '74973 Pawling Way');
+insert into tb_person (id, name, gender, address) values (2, 'Lenette', 'Female', '08 Corben Road');
+insert into tb_person (id, name, gender, address) values (3, 'Sinclare', 'Male', '3982 Pine View Place');
+insert into tb_person (id, name, gender, address) values (4, 'Marris', 'Female', '7 Tony Avenue');
+insert into tb_person (id, name, gender, address) values (5, 'Stacy', 'Male', '8 Lunder Alley');
+insert into tb_person (id, name, gender, address) values (6, 'Belita', 'Female', '89787 Bultman Point');
+insert into tb_person (id, name, gender, address) values (7, 'Griff', 'Male', '3 Blackbird Center');
+insert into tb_person (id, name, gender, address) values (8, 'Gerhardine', 'Female', '8171 Brown Drive');
+insert into tb_person (id, name, gender, address) values (9, 'Blinnie', 'Female', '6 Pierstorff Lane');
+insert into tb_person (id, name, gender, address) values (10, 'Trina', 'Female', '55 Texas Park');
