@@ -1,6 +1,6 @@
 package br.com.sandes.MyApi.mapper;
 
-import br.com.sandes.MyApi.data.vo.v1.PersonDTO;
+import br.com.sandes.MyApi.data.dto.v1.PersonDTO;
 import br.com.sandes.MyApi.model.Person;
 
 import java.util.ArrayList;
