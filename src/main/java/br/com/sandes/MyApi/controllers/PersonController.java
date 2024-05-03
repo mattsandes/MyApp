@@ -1,13 +1,12 @@
 package br.com.sandes.MyApi.controllers;
 
-import br.com.sandes.MyApi.data.vo.v1.PersonDTO;
+import br.com.sandes.MyApi.data.dto.v1.PersonDTO;
 import br.com.sandes.MyApi.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.List;
 
 @RestController
