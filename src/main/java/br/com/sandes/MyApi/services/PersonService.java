@@ -1,11 +1,14 @@
 package br.com.sandes.MyApi.services;
 
-import br.com.sandes.MyApi.data.vo.v1.PersonDTO;
+import br.com.sandes.MyApi.controllers.PersonController;
+import br.com.sandes.MyApi.data.dto.v1.PersonDTO;
 import br.com.sandes.MyApi.exception.RequiredObjectNullException;
 import br.com.sandes.MyApi.exception.ResourceNotFoundException;
 import br.com.sandes.MyApi.mapper.ModelMapper;
 import br.com.sandes.MyApi.model.Person;
 import br.com.sandes.MyApi.repositories.PersonRepository;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +26,12 @@ public class PersonService {
     public List<PersonDTO> findAll(){
         logger.info("Found all people!");
 
-        var entities = repository.findAll();
+        var entities = ModelMapper.parseListObject(repository.findAll(), PersonDTO.class);
 
-        return ModelMapper.parseListObject(entities, PersonDTO.class);
+        entities.forEach(p -> p.add(
+                        linkTo(methodOn(PersonController.class).findById(p.getKey())).withSelfRel()));
+
+        return entities;
     }
 
     public PersonDTO findById(Long id){
@@ -33,7 +39,11 @@ public class PersonService {
 
         var entity = repository.findById(id);
 
-        return ModelMapper.parseObject(entity, PersonDTO.class);
+        var dto = ModelMapper.parseObject(entity, PersonDTO.class);
+
+        dto.add(linkTo(methodOn(PersonController.class).findById(dto.getKey())).withSelfRel());
+
+        return dto;
     }
 
     public PersonDTO create(PersonDTO personDTO){
@@ -45,7 +55,11 @@ public class PersonService {
 
         var entity = ModelMapper.parseObject(personDTO, Person.class);
 
-        return ModelMapper.parseObject(repository.save(entity), PersonDTO.class);
+        var dto = ModelMapper.parseObject(repository.save(entity), PersonDTO.class);
+
+        dto.add(linkTo(methodOn(PersonController.class).findById(dto.getKey())).withSelfRel());
+
+        return dto;
     }
 
     public PersonDTO update(PersonDTO person){
@@ -62,7 +76,11 @@ public class PersonService {
         entity.setGender(person.getGender());
         entity.setAddress(person.getAddress());
 
-        return ModelMapper.parseObject(repository.save(entity), PersonDTO.class);
+        var dto = ModelMapper.parseObject(repository.save(entity), PersonDTO.class);
+
+        dto.add(linkTo(methodOn(PersonController.class).findById(dto.getKey())).withSelfRel());
+
+        return dto;
     }
 
     public void delete(Long id){
