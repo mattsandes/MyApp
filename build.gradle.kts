@@ -24,6 +24,7 @@ dependencies {
 	implementation("org.modelmapper:modelmapper:3.2.0")
 	testImplementation("org.mockito:mockito-core:5.11.0")
 	implementation("org.springframework.hateoas:spring-hateoas:2.2.2")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
 }
 
 tasks.withType<Test> {
