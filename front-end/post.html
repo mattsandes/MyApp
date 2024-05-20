@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Application</title>
+    <style>
+        #footer {
+            height: 100px;
+            background-color: #9097C0;
+        }
+        h1, h2 {
+            text-decoration: underline;
+        }
+        body {
+            background-color: #503B31;
+            margin: auto;
+            align-items: center;
+            width: 90%;
+        }
+        #content {
+            padding: 5px;
+            background-color: #9097C0;
+            margin-top: 10px;
+        }
+        #head {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 5px;
+            color: white;
+            text-align: center;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="head">
+        <h1>My App</h1>
+    
+        <span id="navbar">
+            <a href="presentation.html">| Home </a>
+            <a href="post.html">| Register</a>
+            <a href="index.html">| Data |</a>
+        </span>
+    </div>
+
+    <div id="content">
+
+        <h1>About this topic</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget tempus sapien, ac aliquam lectus. Integer
+            efficitur risus diam, ac tempor urna tristique quis. Maecenas ac pulvinar ante. Duis eget feugiat sapien. In malesuada
+            viverra sem, in vehicula neque dapibus et. Praesent vel enim nisi. Quisque odio nisi, facilisis suscipit pulvinar vitae,
+            sodales aliquam lectus.
+        </p>
+
+        <p>
+            In aliquam ipsum eget lectus finibus, sit amet pharetra nunc aliquet. Praesent non arcu libero. Curabitur ultricies id
+            eros at interdum. Nunc vitae vestibulum justo, at ultrices lacus. In lacinia diam a mollis accumsan. Nulla consectetur
+            velit vitae leo sodales dictum. Aliquam id diam ornare, maximus sem luctus, mollis ex. Donec porta convallis fringilla.
+            Nam hendrerit est vitae bibendum auctor. Cras varius elit orci, ac iaculis leo scelerisque vitae. Mauris sed mattis
+            massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc rutrum ex sed ipsum
+            rhoncus, eu auctor odio consectetur. Donec vel lobortis enim. Sed ullamcorper, ipsum quis semper facilisis, urna nisi
+            posuere ante, auctor consequat turpis magna ac sapien.
+        </p>
+
+        <p>
+            Vivamus eget ex sapien. Vivamus ac eros tristique, maximus dui vel, pulvinar nisi. Vivamus vestibulum sapien
+            sollicitudin iaculis porta. Sed sed arcu eu dolor laoreet bibendum quis ac ex. Quisque accumsan metus sem, ac vestibulum
+            nibh ullamcorper et. Aliquam in porta orci. Duis id sagittis odio. Vivamus at porttitor arcu. Sed vel dui est. Integer
+            non ante nec justo consequat porta quis vitae risus.
+        </p>
+
+        <p>
+            Nam hendrerit tincidunt sapien vel interdum. Donec augue nisi, rhoncus eget nibh sit amet, pellentesque efficitur nisi.
+            Donec hendrerit mi vitae ligula tristique, sed mattis ante luctus. Suspendisse condimentum nunc ut purus vestibulum, eu
+            efficitur metus gravida. Vivamus euismod vehicula quam vel tristique. Maecenas vehicula et dolor vel placerat. Curabitur
+            sodales risus in justo sodales, et gravida nisi condimentum. Class aptent taciti sociosqu ad litora torquent per conubia
+            nostra, per inceptos himenaeos. Duis non fermentum ipsum. Ut quis nisi ut leo ullamcorper ullamcorper. Mauris dictum, mi
+            sit amet vestibulum malesuada, dui turpis consequat ipsum, et faucibus purus lacus eget felis.
+        </p>
+
+        <hr>
+
+        <h2>Get registred here</h2>
+
+        <form onsubmit="cadastraUsuario()">
+            <label for="name">Name:</label>
+            <input name="name" id="name" type="text">
+            
+            <br><br>
+            
+            <label for="address">Address:</label>
+            <input name="address" id="address" type="text">
+            
+            <br><br>
+            
+            <label for="gender">Gender:</label>
+            <input name="gender" id="gender" type="text">
+            
+            <br><br>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="footer">
+        <h1>Disigned by: Mateus Sandes</h1>
+    </div>
+</body>
+    <script src="post.js"></script>
+</html>
