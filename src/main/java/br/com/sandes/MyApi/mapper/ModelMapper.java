@@ -11,10 +11,12 @@ public class ModelMapper {
     private final static org.modelmapper.ModelMapper mapper = new org.modelmapper.ModelMapper();
 
     static {
-        mapper.createTypeMap(Person.class, PersonDTO.class)
+        mapper.createTypeMap(
+                Person.class, PersonDTO.class)
                 .addMapping(Person::getId, PersonDTO::setKey);
 
-        mapper.createTypeMap(PersonDTO.class, Person.class)
+        mapper.createTypeMap(
+                PersonDTO.class, Person.class)
                 .addMapping(PersonDTO::getKey, Person::setId);
     }
 
