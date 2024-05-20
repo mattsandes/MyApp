@@ -25,4 +25,8 @@ No momento faz apenas um CRUD simples, em breve planejo implemnetar outras funci
 
 3. Na sua IDE (e.g: VS Code), abra o arquivo ```main.html``` e você ja podera ver os dados na tabela, caso não apareça, houve algum erro no processo de inicializar a api
 
+## Outros recursos:
+
+- Pagina do Swagger da api: http://localhost:8080/swagger-ui/index.html
+
 ## Novas funcionalidades estão vindo
