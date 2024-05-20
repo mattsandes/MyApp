@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: buildo/h2database
+    ports:
+      - "9090:8080"
+
+  app:
+    image: openjdk:11-jre-slim
+    ports:
+      - "8080:8080"
+    command: [ "java", "-jar", "MyApi-0.0.1-SNAPSHOT.jar" ]
+    depends_on:
+      - db
