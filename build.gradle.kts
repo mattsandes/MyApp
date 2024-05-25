@@ -16,6 +16,8 @@ repositories {
 }
 
 dependencies {
+	testImplementation("io.rest-assured:rest-assured:5.4.0")
+	testImplementation("org.testcontainers:postgresql:1.19.8")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.flywaydb:flyway-core")
