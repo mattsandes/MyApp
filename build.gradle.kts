@@ -32,3 +32,11 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.register<Exec>("openBrowser") {
+	commandLine("sh", "-c", "sleep 5 && xdg-open /home/mateus/Personal/MyApi/front-end/index.html")
+}
+
+tasks.named("bootRun") {
+	finalizedBy("openBrowser")
+}
