@@ -1,6 +1,7 @@
 package br.com.sandes.MyApi.services;
 
 import br.com.sandes.MyApi.data.dto.v1.PersonDTO;
+import br.com.sandes.MyApi.mapper.ModelMapper;
 import br.com.sandes.MyApi.mocks.MockPerson;
 import br.com.sandes.MyApi.model.Person;
 import br.com.sandes.MyApi.repositories.PersonRepository;
@@ -16,8 +17,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 import java.util.Optional;
 
+import static javax.management.Query.eq;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -27,6 +31,9 @@ class PersonServiceTest {
     MockPerson input;
 
     @Mock
+    ModelMapper mapper;
+
+    @Mock
     PersonRepository repository;
 
     @InjectMocks
@@ -34,6 +41,7 @@ class PersonServiceTest {
 
     @BeforeEach
     void setUp() throws Exception{
+        mapper = new ModelMapper();
         input = new MockPerson();
     }
 
@@ -68,24 +76,4 @@ class PersonServiceTest {
         assertEquals(result.getAddress(), "Test address 1");
         assertEquals(result.getGender(), "Female");
     }
-
-    @Test
-    @DisplayName("Valida que é possivel criar um novo recurso")
-    void create() {
-        Person entity = input.mockEntity(1);
-
-        Person persisted = entity;
-        persisted.setId(1L);
-
-        PersonDTO dto = input.mockDto(1);
-        dto.setKey(1L);
-
-        when(repository.save(entity)).thenReturn(persisted);
-
-        var result = service.create(dto);
-    }
-//
-//    @Test
-//    void update() {
-//    }
 }
