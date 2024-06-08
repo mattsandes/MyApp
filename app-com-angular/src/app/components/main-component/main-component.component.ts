@@ -7,8 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   selector: 'app-main-component',
   standalone: true,
   imports: [
-    CommonModule,
-    HttpClientModule],
+    CommonModule],
   templateUrl: './main-component.component.html',
   styleUrl: './main-component.component.css'
 })
