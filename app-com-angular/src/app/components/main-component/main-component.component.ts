@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyServiceService } from '../../services/my-service.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-component',
