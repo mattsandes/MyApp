@@ -1,37 +1,39 @@
-<table id="content-table">
-    <thead>
-        <tr>
-            <th>ID</th> <th>Name</th> <th>Address</th> <th>gender</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let person of people">
-            <td>{{ person.id }}</td>
-            <td>{{ person.name }}</td>
-            <td>{{ person.address }}</td>
-            <td>{{ person.gender }}</td>
-        </tr>
-    </tbody>
-</table>
-
-<button mat-button>Click here</button>
-
-<hr>
-
-<h2>Sorting things</h2>
+<h3>Tabela do Angular Material</h3>
 
 <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique, ex a iaculis laoreet, dolor nunc efficitur
-    lorem, id semper magna erat sit amet urna. Ut id fringilla sapien. Pellentesque mollis elit vitae risus tincidunt
-    vehicula. Mauris molestie eros lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-    turpis egestas. Fusce sollicitudin malesuada mollis. In placerat efficitur leo a dictum. Aliquam eu tortor at nisl
-    sollicitudin eleifend. Curabitur at faucibus nisl, in tincidunt orci. Aliquam erat volutpat. Morbi pharetra fringilla
-    sapien nec vestibulum. Integer posuere porttitor sem, et sodales lorem eleifend id. Suspendisse blandit leo mi, sed
-    suscipit nisl condimentum non. Donec a ante nec libero aliquet lacinia in ac dui. Nunc accumsan arcu bibendum, rhoncus
-    augue ut, faucibus mi.
+    Aqui eu vou tentar usar a tabela do angular material para ver
+    como fica e ver se eu consigo aprender a usar ela.
 </p>
 
-<hr>
+<table mat-table [dataSource]="dataSource">
 
-<h2>outra coisa</h2>
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
 
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> Gender </th>
+        <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

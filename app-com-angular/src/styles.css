@@ -1,7 +1,2 @@
-body {
-    background-color: gainsboro;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+html, body { height: 100%; }
+body { margin: auto; font-family: Roboto, "Helvetica Neue", sans-serif; width: 80%; }
