@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ApiServiceService } from '../../services/api-service.service';
 import { CommonModule } from '@angular/common';
-import { MatTable, MatTableModule } from '@angular/material/table';
+import { MatTable, MatTableDataSource, MatTableModule } from '@angular/material/table';
 
-export interface People {
+export interface Post {
   id: number,
-  name: string,
-  age: number
+  title: string,
+  body: string
 }
 
 @Component({
@@ -14,21 +14,22 @@ export interface People {
   standalone: true,
   imports: [
     CommonModule,
-    MatTableModule
+    MatTableModule,
   ],
   templateUrl: './data.component.html',
   styleUrl: './data.component.css'
 })
 export class DataComponent {
 
-  users:any[] = [];
+  displayedColumns: string[] = ['id', 'title', 'body'];
+  dataSource = new MatTableDataSource<Post>();
 
   constructor(private service: ApiServiceService){}
 
   ngOnInit(): void {
     this.service.findAll().subscribe(
-      response => {
-        this.users = response;
+      (response:Post[]) => {
+        this.dataSource.data = response;
       }
     )
   }
