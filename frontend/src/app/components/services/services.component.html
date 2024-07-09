@@ -1,0 +1,69 @@
+<div class="content">
+    <h4>This is not a only common app...</h4>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Morbi aliquet, dui et
+        tincidunt viverra, enim ipsum dignissim massa,
+        a dapibus neque massa eu arcu. Proin vitae
+        est molestie dui feugiat dictum non suscipit
+        odio. Cras et eros eros. Praesent lorem ligula,
+        mollis non nunc eu, cursus porttitor tellus.
+        Aliquam erat volutpat. Morbi finibus, orci ut
+        mattis ultricies, sem erat facilisis felis,
+        in placerat felis elit a libero. Integer
+        facilisis sem dignissim tempor semper.
+        Suspendisse pretium luctus urna, vitae
+        placerat quam aliquet euismod. Donec risus
+        enim, dignissim eget ante sit amet, pretium
+        ullamcorper sem. Praesent a vestibulum eros.
+        Maecenas vulputate felis semper purus sodales,
+        eget pharetra leo efficitur.
+    </p>
+
+    <h4>Add some features here</h4>
+
+    <p>
+        Here you can do simple math operation like:
+    </p>
+
+    <ul>
+        <li>Sum</li>
+        <li>Subtraction</li>
+        <li>Division</li>
+        <li>Multiplication</li>
+    </ul>
+
+    <mat-form-field id="first-number">
+        <mat-label>First number</mat-label>
+        <input matInput>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field id="second-number">
+        <mat-label>Second number</mat-label>
+        <input matInput>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>Operations</mat-label>
+        <mat-select>
+            @for (operation of operations; track operations) {
+                <mat-option [value]="operation.value">{{operation.viewValue}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+    
+    <button mat-button>Calculate</button>
+
+    <br>
+
+    <mat-form-field>
+        <input matInput disabled="true">
+    </mat-form-field>
+</div>

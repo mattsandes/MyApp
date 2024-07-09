@@ -1,0 +1,19 @@
+<h4>Data from my api</h4>
+
+<table mat-table [dataSource]="users">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let user">{{user.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+        <th mat-header-cell matColumnDef>Age</th>
+    </ng-container>
+
+    <tr mat-header-row *matFooterRowDef="users"></tr>
+    <tr mat-row *matRowDef="let row; columns: users"></tr>
+</table>

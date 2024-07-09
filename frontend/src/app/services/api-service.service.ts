@@ -5,13 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MyServiceService {
-
-  private url = 'http://localhost:8080/api/myApi';
+export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getDadosDaApi(): Observable<any> {
-    return this.http.get(this.url);
+  public findAll(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8080/myApi')
   }
 }

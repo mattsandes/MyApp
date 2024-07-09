@@ -1,1 +1,27 @@
-<router-outlet />
+<div id="head-div">
+    <h3>Welcome to my app</h3>
+
+    <nav>
+        <button 
+            mat-button 
+            routerLink="home">
+            Home
+        </button>
+        <button 
+            mat-button
+            routerLink="about">
+            About
+        </button>
+        <button 
+            mat-button
+            routerLink="services">
+            Services
+        </button>
+        <button
+            mat-button
+            routerLink="data">
+            Data
+        </button>
+    </nav>
+</div>
+<router-outlet></router-outlet>

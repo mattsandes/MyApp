@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MainComponentComponent } from './components/main-component/main-component.component';
-import { ContentComponent } from './components/content/content.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import {MatButton, MatButtonModule} from '@angular/material/button'
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    MainComponentComponent,
-    ContentComponent],
-  template:
-    `
-      <router-outlet />
-      <app-content />
-      <app-main-component />
-    `
+    RouterLink,
+    HomeComponent,
+    MatButton
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'app-com-angular';
+  title = 'frontend';
 }
