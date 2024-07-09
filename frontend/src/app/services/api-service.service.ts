@@ -10,6 +10,6 @@ export class ApiServiceService {
   constructor(private http: HttpClient) { }
 
   public findAll(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8080/myApi')
+    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts')
   }
 }
