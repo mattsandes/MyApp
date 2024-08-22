@@ -1,0 +1,6 @@
+br/com/sandes/services/UserServices.class
+br/com/sandes/config/OpenApiConfig.class
+br/com/sandes/controllers/UserController.class
+br/com/sandes/StartApp.class
+br/com/sandes/model/Users.class
+br/com/sandes/repositories/UsersRepository.class

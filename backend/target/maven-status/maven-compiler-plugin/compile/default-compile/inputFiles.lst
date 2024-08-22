@@ -1,0 +1,6 @@
+/home/mateus/Personal/myApi/src/main/java/br/com/sandes/StartApp.java
+/home/mateus/Personal/myApi/src/main/java/br/com/sandes/config/OpenApiConfig.java
+/home/mateus/Personal/myApi/src/main/java/br/com/sandes/controllers/UserController.java
+/home/mateus/Personal/myApi/src/main/java/br/com/sandes/model/Users.java
+/home/mateus/Personal/myApi/src/main/java/br/com/sandes/repositories/UsersRepository.java
+/home/mateus/Personal/myApi/src/main/java/br/com/sandes/services/UserServices.java
